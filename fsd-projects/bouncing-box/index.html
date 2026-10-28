@@ -8,19 +8,27 @@
       .box {
         width: 70px;
         height: 70px;
-        background-color: teal;
-        font-size: 300%;
-        text-align: center;
+        background-image: url ("");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: transparent; 
+        border: none;
+        font-size: 0;
         user-select: none;
         display: block;
         position: absolute;
         top: 100px;
-        /* Change me! */
         left: 0px;
       }
 
       .board {
         height: 100vh;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnhlsR1RrCXj6xZ3q6lFpXDJFWbMPJPy26ZIbng-HWbjDiExzE7gEz8lEc&s=10");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
       }
     </style>
     <!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -72,6 +80,8 @@
         var positionX = 0;
         var points = 0;
         var speed = 10;
+        var positionY;
+        var speedY;
 
 
 
@@ -84,11 +94,19 @@
         function update() {
           positionX += speed;
 
-          moveBoxTo(positionX) 
-          positionX = 0
-          changeBoxText(points)
+          moveBoxTo(positionX, positionY) {
+            box.css("left", newPositionX);
+            box.css("top", newPositionY);
+            var boardHeight = jQuery(window).height();
+
+          }
+
+          
           if (positionX > boardWidth) {
             speed = speed * -1;
+}
+if (positionX < 0) {
+  speed = speed * -1;
 }
 
           
@@ -102,10 +120,10 @@
          * - move the box to the left side of the screen.
          */
         function handleBoxClick() {
+          positionX = 0;
           points = points + 1;
           speed = 3 * points + 10;
-
-
+          changeBoxText(points)
 
 
 
