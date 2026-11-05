@@ -36,10 +36,15 @@ var init = function (window) {
 
         // TODO 3 : Call the drawCircle() function
         drawCircle();
+        physikz.updatePosition(circles[0]);
         drawCircle();
+        physikz.updatePosition(circles[1]);
         drawCircle();
+        physikz.updatePosition(circles[2]);
         drawCircle();
+        physikz.updatePosition(circles[3]);
         drawCircle();
+        physikz.updatePosition(circles[4]);
 
 
         // TODO 7 : Use a loop to create multiple circles
