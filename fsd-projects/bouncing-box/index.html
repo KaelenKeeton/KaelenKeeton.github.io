@@ -14,7 +14,7 @@
         background-repeat: no-repeat;
         background-color: transparent; 
         border: none;
-        font-size: 0;
+        font-size: 30;
         user-select: none;
         display: block;
         position: absolute;
@@ -94,7 +94,7 @@
         function update() {
           positionX += speed;
 
-          moveBoxTo(positionX, positionY) {
+          moveBoxTo(positionX, positionY); {
             box.css("left", newPositionX);
             box.css("top", newPositionY);
             var boardHeight = jQuery(window).height();
