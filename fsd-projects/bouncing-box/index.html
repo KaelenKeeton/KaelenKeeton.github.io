@@ -65,7 +65,7 @@
       box.on("click", handleBoxClick);
 
       // moves the Box to a new position on the screen along the X-Axis
-      function moveBoxTo(positionX, positionY) {
+      function moveBoxTo(newPositionX, newPositionY) {
         box.css("left", newPositionX);
         box.css("top", newPositionY);
       }
@@ -108,12 +108,12 @@
           speed = speed * -1;
         }
 
-      
-      if (positionY > boardHeight) {
-          speed = speed * -1;
+
+        if (positionY > boardHeight) {
+          speedY = speedY * -1;
         }
         if (positionY < 0) {
-          speed = speed * -1;
+          speedY = speedY * -1;
         }
 
         moveBoxTo(positionX, positionY);
